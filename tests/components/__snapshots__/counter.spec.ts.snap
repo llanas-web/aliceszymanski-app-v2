@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`counter.vue should render correctly 1`] = `
+"<div class=\\"flex flex-col items-center justify-center h-full space-y-4 text-xl\\">
+  <p>Here's a counter:</p>
+  <div class=\\"flex items-center justify-center\\"><button class=\\"px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700\\"> + </button><span class=\\"mx-2\\">0</span><button class=\\"px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700\\"> - </button>
+    <p>Should result as error in workflow</p>
+  </div>
+</div>"
+`;

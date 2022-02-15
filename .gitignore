@@ -1,0 +1,9 @@
+node_modules
+
+coverage
+
+*.log
+.nuxt
+nuxt.d.ts
+.output
+*.env*
