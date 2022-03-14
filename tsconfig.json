@@ -1,15 +1,22 @@
 {
-  // https://v3.nuxtjs.org/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": {
-    "types": [
-      "@types/node",
-      "@types/jest",
-      "@vue/test-utils"
-    ],
-    "paths": {
-      "@/components/*": ["components/*"],
-      "@/pages/*": ["pages/*"]
+    // https://v3.nuxtjs.org/concepts/typescript
+    "extends": "./.nuxt/tsconfig.json",
+    "compilerOptions": {
+        "types": [
+            "@types/node",
+            "@types/jest",
+            "@vue/test-utils",
+            "@nuxtjs/strapi",
+            "@fortawesome/fontawesome-common-types",
+            "@nuxt/types"
+        ],
+        "paths": {
+            "@/components/*": [
+                "components/*"
+            ],
+            "@/pages/*": [
+                "pages/*"
+            ]
+        }
     }
-  }
 }
