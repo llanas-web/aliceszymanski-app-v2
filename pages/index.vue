@@ -1,5 +1,5 @@
 <template>
-  <Counter></Counter>
+<div>coucou</div>
 </template>
 
 <script lang="ts" setup></script>

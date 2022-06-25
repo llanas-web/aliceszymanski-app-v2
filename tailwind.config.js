@@ -11,7 +11,9 @@ module.exports = {
     './nuxt.config.{js,ts}',
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ['Cinzel'],
+    },
   },
   plugins: [],
 };
