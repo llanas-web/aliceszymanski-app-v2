@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Cinzel";
-    src: local("Cinzel"), url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700') format("truetype");
-}
+    font-family: 'Cinzel';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('assets/fonts/Cinzel/static/Cinzel-Regular.ttf') format('truetype');
+  }

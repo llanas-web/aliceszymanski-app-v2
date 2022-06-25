@@ -1,8 +1,8 @@
 <template>
-  <nav class="bg-white border-gray-200 px-2 py-2.5 rounded">
+  <nav class="bg-white border-gray-200 p-2.5 rounded">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
       <nuxt-link to="/" class="flex items-center">
-        <span class="self-center text-xl font-semibold whitespace-nowrap"
+        <span class="self-center text-2xl whitespace-nowrap"
           >Alice Szymanski</span
         >
       </nuxt-link>
