@@ -87,6 +87,37 @@
             >
           </li>
         </ul>
+        <div>
+          <ul>
+            <li>
+              <a
+                href="https://www.facebook.com/alice.szymanski.7"
+                title="Alice facebook"
+                target="_blank"
+              >
+                <Facebook></Facebook>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://soundcloud.com/alice-szymanski-flute"
+                title="Alice Soundcloud"
+                target="_blank"
+              >
+                <Soundcloud></Soundcloud>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/alice.szymanski.7"
+                title="Alice facebook"
+                target="_blank"
+              >
+                <Instagram ></Facebook>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
@@ -94,7 +125,10 @@
 
 <script lang="ts" setup>
 import type { Footer } from "../models/strapi-types";
-import type { Strapi4Response } from "@nuxtjs/strapi";
+import { IconComponentEnum } from "./commons/icons/IconComponentEnum";
+import Facebook from "./commons/icons/facebook.vue";
+import Soundcloud from "./commons/icons/soundcloud.vue";
+import Instagram from "./commons/icons/instagram.vue";
 
 const navigationMenuMap = reactive([
   {
@@ -122,17 +156,29 @@ const navigationMenuMap = reactive([
     name: "Galerie",
   },
 ]);
+const socialLinkMap = reactive<
+  {
+    title: string;
+    link: string;
+    iconName: IconComponentEnum;
+  }[]
+>([
+  {
+    title: "Alice facebook",
+    link: "https://www.facebook.com/alice.szymanski.7",
+    iconName: IconComponentEnum.ICON_FACEBOOK,
+  },
+  {
+    title: "Alice soundcloud",
+    link: "https://soundcloud.com/alice-szymanski-flute",
+    iconName: IconComponentEnum.ICON_INSTAGRAM,
+  },
+  {
+    title: "Alice Instagram",
+    link: "https://www.instagram.com/alice.szymanski/",
+    iconName: IconComponentEnum.ICON_INSTAGRAM,
+  },
+]);
 
 const isExpanded = ref(false);
-
-const { find } = useStrapi3();
-const scrollOverheader = false;
-const isHomePage = false;
-const isBurgerToggled = true;
-
-const { data, pending, error } = await useAsyncData("footer", () =>
-  find<Footer>("footer")
-);
-console.log(data.value);
-const footer = data.value;
 </script>
