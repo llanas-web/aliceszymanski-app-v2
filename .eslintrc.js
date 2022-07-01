@@ -6,23 +6,25 @@ module.exports = {
   },
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: "module",
-    parser: "@typescript-eslint/parser",
+    sourceType: 'module',
+    parser: '@typescript-eslint/parser',
   },
   extends: [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:nuxt/recommended",
-    "plugin:vue/vue3-recommended",
-    "plugin:prettier/recommended",
+    'plugin:@typescript-eslint/recommended',
+    'plugin:nuxt/recommended',
+    'plugin:vue/vue3-recommended',
+    'plugin:prettier/recommended',
   ],
-  plugins: ["@typescript-eslint"],
+  plugins: ['@typescript-eslint'],
   rules: {
-    "prettier/prettier": [
-      "error",
+    'prettier/prettier': [
+      'error',
       {
-        endOfLine: "auto",
+        endOfLine: 'auto',
+        singleQuote: true,
+        parser: 'flow',
       },
     ],
-    "vue/multi-word-component-names": "off",
+    'vue/multi-word-component-names': 'off',
   },
 };
