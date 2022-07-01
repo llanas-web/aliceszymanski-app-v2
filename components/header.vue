@@ -2,7 +2,14 @@
   <nav class="bg-white border-gray-200 p-2.5 rounded">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
       <nuxt-link to="/" class="flex items-center">
-        <span class="self-center text-2xl whitespace-nowrap"
+        <span
+          class="
+            self-center
+            text-2xl
+            whitespace-nowrap
+            text-zinc-500
+            hover:text-yellow-400
+          "
           >Alice Szymanski</span
         >
       </nuxt-link>
@@ -15,11 +22,10 @@
           p-2
           ml-3
           text-sm text-gray-500
-          rounded-lg
           md:hidden
-          hover:bg-gray-100
+          hover:bg-zinc-50
         "
-        :class="{ 'focus:bg-gray-100': isExpanded }"
+        :class="{ 'focus:text-yellow-400': isExpanded }"
         :aria-expanded="isExpanded"
         aria-controls="mobile-menu"
         @click="isExpanded = !isExpanded"
@@ -68,63 +74,58 @@
               class="
                 block
                 py-2
-                pr-4
-                pl-3
-                text-gray-700
+                px-3
+                text-base
+                font-normal
+                leading-6
+                uppercase
+                font-cursive
+                text-zinc-500
                 border-b border-gray-100
-                hover:bg-gray-50
-                md:hover:bg-transparent
-                md:border-0
-                md:hover:text-blue-700
-                md:p-0
-                dark:text-gray-400
-                md:dark:hover:text-white
-                dark:hover:bg-gray-700 dark:hover:text-white
-                md:dark:hover:bg-transparent
-                dark:border-gray-700
+                hover:text-yellow-400 hover:bg-zinc-50
               "
               >{{ menuItem.name }}</nuxt-link
             >
           </li>
         </ul>
-        <div>
-          <ul>
-            <li>
-              <a
-                href="https://www.facebook.com/alice.szymanski.7"
-                title="Alice facebook"
-                target="_blank"
-              >
-                <Facebook></Facebook>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://soundcloud.com/alice-szymanski-flute"
-                title="Alice Soundcloud"
-                target="_blank"
-              >
-                <Soundcloud></Soundcloud>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/alice.szymanski.7"
-                title="Alice facebook"
-                target="_blank"
-              >
-                <Instagram ></Facebook>
-              </a>
-            </li>
-          </ul>
-        </div>
+        <ul class="flex flex-row items-center justify-around px-5 py-3">
+          <li>
+            <a
+              class="text-yellow-400"
+              href="https://www.facebook.com/alice.szymanski.7"
+              title="Alice facebook"
+              target="_blank"
+            >
+              <Facebook></Facebook>
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-yellow-400"
+              href="https://soundcloud.com/alice-szymanski-flute"
+              title="Alice Soundcloud"
+              target="_blank"
+            >
+              <Soundcloud></Soundcloud>
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-yellow-400"
+              href="https://www.facebook.com/alice.szymanski.7"
+              title="Alice facebook"
+              target="_blank"
+            >
+              <Instagram></Instagram>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
 </template>
 
 <script lang="ts" setup>
-import type { Footer } from "../models/strapi-types";
 import { IconComponentEnum } from "./commons/icons/IconComponentEnum";
 import Facebook from "./commons/icons/facebook.vue";
 import Soundcloud from "./commons/icons/soundcloud.vue";

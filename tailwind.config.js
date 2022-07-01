@@ -13,6 +13,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Cinzel'],
+      cursive: ['Playfair Display'],
     },
   },
   plugins: [],
