@@ -36,5 +36,5 @@ jobs:
         run: npm ci
       - name: Preparing Nuxt
         run: npm run prepare
-      - name: Run tests
-        run: npm run test
+      # - name: Run tests
+      #   run: npm run test
