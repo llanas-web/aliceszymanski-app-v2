@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-white border-gray-200 p-2.5 rounded">
+  <nav class="p-2.5 fixed w-full z-50">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
       <nuxt-link to="/" class="flex items-center">
         <span
@@ -7,7 +7,7 @@
             self-center
             text-2xl
             whitespace-nowrap
-            text-zinc-500
+            text-zinc-300
             hover:text-yellow-400
           "
           >Alice Szymanski</span
@@ -21,9 +21,9 @@
           items-center
           p-2
           ml-3
-          text-sm text-gray-500
+          text-sm text-gray-300
           md:hidden
-          hover:bg-zinc-50
+          hover:text-yellow-400
         "
         :class="{ 'focus:text-yellow-400': isExpanded }"
         :aria-expanded="isExpanded"
@@ -56,18 +56,8 @@
           ></path>
         </svg>
       </button>
-      <div
-        id="mobile-menu"
-        class="w-full md:block md:w-auto"
-        :class="{ hidden: !isExpanded }"
-      >
-        <ul
-          class="
-            flex flex-col
-            mt-4
-            md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium
-          "
-        >
+      <div id="mobile-menu" class="w-full" :class="{ hidden: !isExpanded }">
+        <ul class="flex flex-col mt-4">
           <li v-for="menuItem in navigationMenuMap" :key="menuItem.link">
             <nuxt-link
               :to="menuItem.link"
@@ -80,9 +70,9 @@
                 leading-6
                 uppercase
                 font-cursive
-                text-zinc-500
+                text-zinc-300
                 border-b border-gray-100
-                hover:text-yellow-400 hover:bg-zinc-50
+                hover:text-yellow-400
               "
               >{{ menuItem.name }}</nuxt-link
             >
@@ -126,10 +116,9 @@
 </template>
 
 <script lang="ts" setup>
-import { IconComponentEnum } from "./commons/icons/IconComponentEnum";
-import Facebook from "./commons/icons/facebook.vue";
-import Soundcloud from "./commons/icons/soundcloud.vue";
-import Instagram from "./commons/icons/instagram.vue";
+import Facebook from "./commons/icons/Facebook.vue";
+import Soundcloud from "./commons/icons/Soundcloud.vue";
+import Instagram from "./commons/icons/Instagram.vue";
 
 const navigationMenuMap = reactive([
   {
@@ -155,29 +144,6 @@ const navigationMenuMap = reactive([
   {
     link: "/galerie",
     name: "Galerie",
-  },
-]);
-const socialLinkMap = reactive<
-  {
-    title: string;
-    link: string;
-    iconName: IconComponentEnum;
-  }[]
->([
-  {
-    title: "Alice facebook",
-    link: "https://www.facebook.com/alice.szymanski.7",
-    iconName: IconComponentEnum.ICON_FACEBOOK,
-  },
-  {
-    title: "Alice soundcloud",
-    link: "https://soundcloud.com/alice-szymanski-flute",
-    iconName: IconComponentEnum.ICON_INSTAGRAM,
-  },
-  {
-    title: "Alice Instagram",
-    link: "https://www.instagram.com/alice.szymanski/",
-    iconName: IconComponentEnum.ICON_INSTAGRAM,
   },
 ]);
 

@@ -14,7 +14,8 @@ module.exports = {
     fontFamily: {
       sans: ['Cinzel'],
       cursive: ['Playfair Display'],
+      ['sans-serif']: ['Source Sans Pro'],
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
