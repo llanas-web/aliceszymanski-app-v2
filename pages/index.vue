@@ -6,6 +6,9 @@
         class="h-screen bg-no-repeat bg-cover bg-center"
         :style="{ backgroundImage: `url(${home.header.image.url})` }"
       ></section>
+      <!-- <section>
+        <News></News>
+      </section> -->
       <section>
         <Biographie :bio="home.shortBio"></Biographie>
       </section>
@@ -22,6 +25,7 @@
 import type { Home } from "models/strapi-types";
 import Biographie from "@/components/home/Biographie.vue";
 import MusiqueDeChambre from "@/components/home/MusiqueDeChambre.vue";
+import News from "@/components/home/News.vue";
 import type { Strapi4Response } from "@nuxtjs/strapi";
 
 const { find } = useStrapi3();
