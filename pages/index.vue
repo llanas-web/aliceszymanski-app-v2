@@ -18,6 +18,7 @@
         ></MusiqueDeChambre>
       </section>
     </div>
+    <Toaster></Toaster>
   </template>
 </template>
 
@@ -26,6 +27,7 @@ import type { Home } from "models/strapi-types";
 import Biographie from "@/components/home/Biographie.vue";
 import MusiqueDeChambre from "@/components/home/MusiqueDeChambre.vue";
 import News from "@/components/home/News.vue";
+import Toaster from "@/components/Toaster.vue";
 import type { Strapi4Response } from "@nuxtjs/strapi";
 
 const { find } = useStrapi3();

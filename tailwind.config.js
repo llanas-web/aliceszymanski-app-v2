@@ -17,5 +17,8 @@ module.exports = {
       ['sans-serif']: ['Source Sans Pro'],
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/line-clamp'),
+  ],
 };
