@@ -18,7 +18,9 @@
         ></MusiqueDeChambre>
       </section>
     </div>
-    <Toaster></Toaster>
+    <transition>
+      <Toaster v-show="displayToaster"></Toaster>
+    </transition>
   </template>
 </template>
 
@@ -31,7 +33,24 @@ import Toaster from "@/components/Toaster.vue";
 import type { Strapi4Response } from "@nuxtjs/strapi";
 
 const { find } = useStrapi3();
+const displayToaster = ref(false);
+
 const { data, pending } = await useAsyncData("home", () => find<Home>("home"));
 console.log(data.value);
 const home = data.value;
+setTimeout(() => {
+  displayToaster.value = true;
+}, 1000);
 </script>
+
+<style scoped lang="scss">
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 1s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
