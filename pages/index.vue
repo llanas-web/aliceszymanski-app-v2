@@ -1,27 +1,40 @@
 <template>
-  <div v-if="pending">pending...</div>
-  <template v-else>
-    <div class="flex flex-col divide-y">
+  <div>
+    <div
+      class="
+        flex flex-col
+        divide-y
+        snap snap-y snap-mandatory
+        scroll-smooth
+        h-screen
+        overflow-auto
+      "
+    >
       <section
-        class="h-screen bg-no-repeat bg-cover bg-center"
-        :style="{ backgroundImage: `url(${home.header.image.url})` }"
+        class="min-h-screen bg-no-repeat bg-cover bg-center bg-fixed snap-start"
+        :style="{
+          backgroundImage: loadImage(home.header.image, 'large'),
+        }"
       ></section>
       <!-- <section>
         <News></News>
       </section> -->
-      <section>
+      <section class="max-h-screen mx-auto snap-start">
         <Biographie :bio="home.shortBio"></Biographie>
       </section>
-      <section>
+      <section class="bg-slate-100 mx-auto snap-start z-10">
         <MusiqueDeChambre
           :gallery="home.musiqueDeChambreGallery"
         ></MusiqueDeChambre>
       </section>
     </div>
     <transition>
-      <Toaster v-show="displayToaster"></Toaster>
+      <Toaster
+        v-show="displayToaster"
+        @close-toaster="displayToaster = false"
+      ></Toaster>
     </transition>
-  </template>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -34,6 +47,7 @@ import type { Strapi4Response } from "@nuxtjs/strapi";
 
 const { find } = useStrapi3();
 const displayToaster = ref(false);
+const { loadImage } = useImage();
 
 const { data, pending } = await useAsyncData("home", () => find<Home>("home"));
 console.log(data.value);

@@ -1,6 +1,14 @@
 <template>
   <div>
-    <h2 class="font-cursive text-zinc-500 text-4xl text-center uppercase p-6">
+    <h2
+      class="
+        font-cursive
+        text-zinc-500 text-4xl text-center
+        uppercase
+        p-6
+        shadow-xl
+      "
+    >
       Musique de chambre
     </h2>
   </div>
