@@ -17,6 +17,7 @@
       transition-[max-height]
       ease
       duration-500
+      z-50
     "
   >
     <div
@@ -38,6 +39,7 @@
         class="absolute top-0 right-0 h-3 w-3 cursor-pointer"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 320 512"
+        @click="$emit('closeToaster')"
       >
         <path
           fill="currentColor"
@@ -49,4 +51,5 @@
 </template>
 
 <script lang="ts" setup>
+defineEmits(["closeToaster"]);
 </script>
