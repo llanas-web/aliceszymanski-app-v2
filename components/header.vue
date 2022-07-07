@@ -129,10 +129,10 @@ const navigationMenuMap = reactive([
     link: "/biographie",
     name: "Biographie",
   },
-  // {
-  //   link: "/musique-de-chambre",
-  //   name: "Musique de chambre",
-  // },
+  {
+    link: "/musique-de-chambre",
+    name: "Musique de chambre",
+  },
   // {
   //   link: "/#medias",
   //   name: "Média",
