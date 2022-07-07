@@ -52,5 +52,8 @@
         "@nuxtjs/dotenv": "^1.4.1",
         "markdown-it": "^13.0.1",
         "vue3-markdown-it": "^1.0.10"
+    },
+    "engines": {
+        "node": "16.x"
     }
 }
