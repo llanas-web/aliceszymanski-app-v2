@@ -103,7 +103,7 @@
         <nuxt-link
           :to="{
             path: '/musique-de-chambre',
-            hash: '#' + item.page.url,
+            hash: '#' + item.page.title,
           }"
           class="
             text-zinc-300
