@@ -51,36 +51,22 @@
         </ReadMore>
       </div>
     </section>
-    <div class="h-screen w-full mx-auto snap-start z-10">
-      <div class="flex flex-row">
+    <div class="h-screen mx-auto snap-start z-10">
+      <div
+        class="
+          flex flex-row flex-nowrap
+          snap snap-x snap-mandatory
+          scroll-smooth
+          w-screen
+          overflow-auto
+        "
+      >
         <section
           v-for="page in musiqueDeChambre.pages"
           :key="page._id"
-          class="h-screen"
+          class="h-screen min-w-full snap-start flex flex-col relative"
         >
-          <div class="m-5 shadow-lg">
-            <img
-              :src="page.header.image.formats['large'].url"
-              :alt="page.header.image.alternativeText"
-            />
-          </div>
-          <h3
-            :id="page.title"
-            class="font-sans text-zinc-500 text-2xl text-center uppercase my-6"
-          >
-            {{ page.title }}
-          </h3>
-          <!-- <div
-          v-for="content in page.content"
-          :key="content._id"
-          class="font-sans-serif text-zinc-500 py-6 prose"
-        >
-          <SimpleText
-            v-for="text in content.listContents"
-            :key="text._id"
-            :text="text.text"
-          ></SimpleText>
-        </div> -->
+          <Panel :page="page"></Panel>
         </section>
       </div>
     </div>
@@ -90,6 +76,7 @@
 <script lang="ts" setup>
 import ReadMore from "@/components/commons/ReadMore.vue";
 import SimpleText from "@/components/commons/markdown/SimpleText.vue";
+import Panel from "@/components/mdc/panel.vue";
 import { MusiqueDeChambre } from "models/strapi-types";
 
 const { find } = useStrapi3();
