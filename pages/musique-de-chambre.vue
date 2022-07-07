@@ -63,6 +63,7 @@
       >
         <section
           v-for="page in musiqueDeChambre.pages"
+          :id="page.title"
           :key="page._id"
           class="h-screen min-w-full snap-start flex flex-col relative"
         >
