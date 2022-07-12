@@ -148,4 +148,8 @@ const navigationMenuMap = reactive([
 ]);
 
 const isExpanded = ref(false);
+
+useRouter().afterEach(() => {
+  isExpanded.value = false;
+});
 </script>
