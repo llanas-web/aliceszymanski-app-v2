@@ -137,10 +137,10 @@ const navigationMenuMap = reactive([
   //   link: "/#medias",
   //   name: "Média",
   // },
-  // {
-  //   link: "/agenda",
-  //   name: "Agenda",
-  // },
+  {
+    link: "/agenda",
+    name: "Agenda",
+  },
   // {
   //   link: "/galerie",
   //   name: "Galerie",
